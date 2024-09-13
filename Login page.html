@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        background-image: url('/smart\ classroom.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;       
+        background-size: 100%;
+        padding: 50px 250px; 
+
+}
+
+
+.login-container {
+    width: 400px;
+    height: 460px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #65989f;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input-group input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.role-group {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.role-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+.role-group label {
+    margin-right: 20px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    height: 50px;
+    background-color: #4CAF50;
+    color: #fff;
+    padding-top:0%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+  
+}
+
+#username{
+    width: 95%;
+}
+
+#password{
+    width: 95%;
+}
+
+h3{
+   padding-left: 140px;
+}
+.Forgot{
+            padding-top: 11px;
+            padding-left: 7em;
+}
+
+#forgot_password:hover {
+    background-color: #939b93;
+    cursor: pointer; 
+}
+
+#Reset:hover {
+    background-color: #939b93;
+    cursor: pointer; 
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div><h3>LOGIN AS:</h3></div>
+            <div class="role-group">
+               
+                <input type="radio" id="student" name="role" value="student" checked>
+                <label for="student">student</label>
+
+               <input type="radio" id="teacher" name="role" value="teacher">    
+               <label for="teacher">Teacher</label>
+
+                <input type="radio" id="Admin" name="role" value="Admin">
+                <label for="teacher">Admin</label>
+            </div>
+            <button type="submit"><h1>Login</h1></button>
+                 <div class="Forgot"> 
+                      <input type="button" id="forgot_password" value="Forgot Password">
+                      <input type="button" id="Reset" value="Reset">
+                      
+          
+                    </div>
+           
+
+        </form>
+    </div>
+</body>
+</html>
