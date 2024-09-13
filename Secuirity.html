@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Code Form</title>
+    <style>
+        body {
+            background-color: #45636b; /* Cool grey background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #81b9cc; /* White background for the form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .code-input {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .code-input input {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 24px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green background for the button */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Security Code</h1>
+        <form action="#" method="post">
+            <div class="code-input">
+                <input type="text" id="digit1" maxlength="1" pattern="\d" required>
+                <input type="text" id="digit2" maxlength="1" pattern="\d" required>
+                <input type="text" id="digit3" maxlength="1" pattern="\d" required>
+                <input type="text" id="digit4" maxlength="1" pattern="\d" required>
+            </div>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        // Function to automatically move to the next input
+        function moveToNextInput(event) {
+            const input = event.target;
+            const nextInput = input.nextElementSibling;
+
+            // Move to the next input if the current input is filled
+            if (input.value.length === 1 && nextInput && nextInput.tagName === 'INPUT') {
+                nextInput.focus();
+            }
+        }
+
+        // Add event listeners to all input fields
+        document.querySelectorAll('.code-input input').forEach(input => {
+            input.addEventListener('input', moveToNextInput);
+        });
+    </script>
+</body>
+</html>
